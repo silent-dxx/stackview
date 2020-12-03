@@ -13,6 +13,7 @@ Installation
 
 Below are just some of the method for installing StackView. Do not follow all of these instructions; just pick your favorite one. Other plugin managers exist, and StackView should install just fine with any of them.
 
+> Note: Make sure you have Python2.7 installed on your system
 #### General way:
 Get the StackView ready and unpack the package.
 
