@@ -1,5 +1,5 @@
 if !has("python")
-    echo "vim has to be compiled with +python3 to run this"
+    echo "vim has to be compiled with +python to run this"
     finish
 endif
 
