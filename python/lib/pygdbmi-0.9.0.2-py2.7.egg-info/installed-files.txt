@@ -1,0 +1,16 @@
+..\pygdbmi\StringStream.py
+..\pygdbmi\StringStream.pyc
+..\pygdbmi\__init__.py
+..\pygdbmi\__init__.pyc
+..\pygdbmi\gdbcontroller.py
+..\pygdbmi\gdbcontroller.pyc
+..\pygdbmi\gdbmiparser.py
+..\pygdbmi\gdbmiparser.pyc
+..\pygdbmi\printcolor.py
+..\pygdbmi\printcolor.pyc
+PKG-INFO
+SOURCES.txt
+dependency_links.txt
+not-zip-safe
+requires.txt
+top_level.txt

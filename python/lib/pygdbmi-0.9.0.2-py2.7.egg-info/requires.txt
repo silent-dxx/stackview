@@ -1,0 +1,9 @@
+
+[dev]
+flake8==3.5.0
+collective.checkdocs==0.2
+
+[dev:python_version >= "3.6"]
+black
+pdoc
+pdoc3

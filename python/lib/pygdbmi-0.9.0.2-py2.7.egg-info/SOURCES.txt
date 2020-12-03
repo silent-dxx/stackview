@@ -1,0 +1,15 @@
+MANIFEST.in
+README.md
+setup.cfg
+setup.py
+pygdbmi/StringStream.py
+pygdbmi/__init__.py
+pygdbmi/gdbcontroller.py
+pygdbmi/gdbmiparser.py
+pygdbmi/printcolor.py
+pygdbmi.egg-info/PKG-INFO
+pygdbmi.egg-info/SOURCES.txt
+pygdbmi.egg-info/dependency_links.txt
+pygdbmi.egg-info/not-zip-safe
+pygdbmi.egg-info/requires.txt
+pygdbmi.egg-info/top_level.txt
