@@ -25,6 +25,7 @@ EOF
 let StackView_title = "__StackView_List__"
 let s:StackView_bufnum = 0
 let StackViewTagNameFG ='#43beef'
+let StackViewTagFocusFG ='#2e8b57'
 
 "FUNCTION: s:bufInWindows(bnum)
 "Determine the number of windows open to this buffer number.
@@ -133,6 +134,7 @@ function! s:StackView_Cleanup()
     if has('syntax')
         silent! syntax clear StackViewTitle
         silent! syntax clear StackViewTagName
+        silent! syntax clear StackViewTagFocus
     endif
     match none
 
@@ -296,6 +298,10 @@ function! s:StackView_Explore_File(filename)
     " Syntax highlight the focus names
     if has('syntax')
         exe 'syntax match StackViewTitle /\%' . b:tlist_wp_start . 'l.*/'
+        silent! syntax clear StackViewTagFocus
+        silent! exe 'highlight StackViewTagFocus term=bold ctermfg=Cyan guifg=' . g:StackViewTagFocusFG . ' gui=bold'
+        let l:hl_line = b:tlist_wp_start + b:curr_wp_select + 1
+        silent! exe 'syntax match StackViewTagFocus /\%' . l:hl_line . 'l.*/'
     endif
 
     silent! put =''
