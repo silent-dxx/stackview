@@ -24,6 +24,7 @@ EOF
 
 let StackView_title = "__StackView_List__"
 let s:StackView_bufnum = 0
+let StackViewTagNameFG ='#43beef'
 
 "FUNCTION: s:bufInWindows(bnum)
 "Determine the number of windows open to this buffer number.
@@ -131,6 +132,7 @@ endfunction
 function! s:StackView_Cleanup()
     if has('syntax')
         silent! syntax clear StackViewTitle
+        silent! syntax clear StackViewTagName
     endif
     match none
 
@@ -385,6 +387,10 @@ function! s:StackView_Jump_To_Tag(new_window)
         let l:tag_num = curline - b:tlist_fp_start
         let l:tag_fullname = b:tlist_fp_{b:curr_wp_select}_{l:tag_num}_fullname
         let l:tag_line = b:tlist_fp_{b:curr_wp_select}_{l:tag_num}_line
+
+        silent! syntax clear StackViewTagName
+        silent! exe 'highlight StackViewTagName term=bold ctermfg=Cyan guifg=' . g:StackViewTagNameFG . ' gui=bold'
+        silent! exe 'syntax match StackViewTagName /\%' . line('.') . 'l.*/'
 
         if !s:isWindowUsable(winnr("#"))
             exec s:firstNormalWindow() . "wincmd w"
