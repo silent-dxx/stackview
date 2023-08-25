@@ -60,8 +60,25 @@ def load_config():
         item_index = 0
         item_max   = len(stack_info) - 1
         for item in stack_info:
-            vim.command('let b:tlist_fp_{}_list = b:tlist_fp_{}_list . \'  {}()\' . "\n"'.format(line_num, line_num, item['func']))
-            vim.command('let b:tlist_fp_{}_{}_fullname = \'{}\''.format(line_num, item_index, search_mapping(file_mapping, item['fullname'])))
-            vim.command('let b:tlist_fp_{}_{}_line = {}'.format(line_num, item_index, item['line']))
+            i_file = ''
+            i_func = ''
+            i_fullname = ''
+            i_line = ''
+
+            if item.has_key('file'):
+                i_file = item['file']
+
+            if item.has_key('func'):
+                i_func = item['func']
+
+            if item.has_key('fullname'):
+                i_fullname = item['fullname']
+
+            if item.has_key('line'):
+                i_line = item['line']
+
+            vim.command('let b:tlist_fp_{}_list = b:tlist_fp_{}_list . \'  {}()\' . "\n"'.format(line_num, line_num, i_func))
+            vim.command('let b:tlist_fp_{}_{}_fullname = \'{}\''.format(line_num, item_index, search_mapping(file_mapping, i_fullname)))
+            vim.command('let b:tlist_fp_{}_{}_line = \'{}\''.format(line_num, item_index, i_line))
             item_index += 1
 
